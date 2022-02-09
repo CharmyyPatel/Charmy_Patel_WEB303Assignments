@@ -40,3 +40,31 @@ $("#retain").on("click", function(){
 }); 
 xhr.send("search=ardiuno");
 });
+
+
+
+
+
+
+
+
+
+// Solution of Assignment 2 by sir during Lab.
+
+// $(function() {
+//     $('#content-wrapper a').on('click', function() {
+//        let ids = this.id;
+//        console.log('the is is: ', ids);
+               
+//        let xhr = new XMLHttpRequest;
+       
+//        xhr.open('GET', ids + '.html', true);
+       
+//        xhr.onload = function () {
+//        if (xhr.status === 200) {
+//            $("#content").empty().html(xhr.responseText).hide().fadeIn(2000);
+//         } 
+//      };
+//      xhr.send();
+//     });
+//  });
