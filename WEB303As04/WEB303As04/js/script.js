@@ -1,12 +1,37 @@
 /*
     Assignment #4
-    {Your name here}
+    {Charmy Sanjivbhai Patel}
 */
 
 $(function () {
-    // your code here
+    //your code here
+        navigator.geolocation.getCurrentPosition(success, () => {
+        console.log("Please enable geolocation in order to see your coordinates");
+    
+        setLocalStorage();
+    });
 
+    function success(position) {
 
+        console.log("Position object: ", position);
+        console.log("latitude: ", position.coords.latitude, ", longitude: ", position.coords.longitude);
+        $("#loctaionhere").html(position.timestamp);
+
+    }
+
+    function setLocalStorage() {
+        var currentLatitude= localStorage.getItem(position.coords.latitude);
+        var currentLongitude = localStorage.getItem(position.coords.longitude);
+        var currentTimeStamp = localStorage.getItem(position.timestamp);
+        
+        document.getElementsByName() = currentLatitude;
+        document.getElementsByName() = currentLongitude;
+        document.getElementsByName() = currentTimeStamp;
+      
+        // htmlElem.style.backgroundColor = '#' + currentColor;
+        // pElem.style.fontFamily = currentFont;
+        // imgElem.setAttribute('src', currentImage);
+      }
 
 
 
