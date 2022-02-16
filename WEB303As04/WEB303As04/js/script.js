@@ -32,7 +32,23 @@ $(function () {
         // pElem.style.fontFamily = currentFont;
         // imgElem.setAttribute('src', currentImage);
       }
+    // localStorage.setItem("food", "apple");
+    let foodItem = localStorage.getItem("food");
+    console.log(foodItem);
 
+    let apple = {
+        type: "fruit",
+        name: "apple",
+        taste: "sweet"
+    };
+    localStorage.setItem("foodObject", JSON.stringify(apple));
+    let foodJSONStringObject = localStorage.getItem("foodObject");
+    let foodObject = JSON.parse(foodJSONStringObject);
+    console.log("my food object: ", foodObject.name);
+
+    $('#prizes').accordion();
+
+});
 
 
     // DO NOT EDIT ANY CODE IN THIS FUNCTION DEFINTION
