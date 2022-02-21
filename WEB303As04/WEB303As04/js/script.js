@@ -4,53 +4,54 @@
 */
 
 $(function () {
-    //your code here
         navigator.geolocation.getCurrentPosition(success, () => {
         console.log("Please enable geolocation in order to see your coordinates");
-    
-        setLocalStorage();
     });
 
     function success(position) {
-
         console.log("Position object: ", position);
         console.log("latitude: ", position.coords.latitude, ", longitude: ", position.coords.longitude);
-        $("#loctaionhere").html(position.timestamp);
-
+        $("#locationhere").html(position.timestamp);
     }
 
-    function setLocalStorage() {
-        var currentLatitude= localStorage.getItem(position.coords.latitude);
-        var currentLongitude = localStorage.getItem(position.coords.longitude);
-        var currentTimeStamp = localStorage.getItem(position.timestamp);
+    $(function (localStorageCheck) {
+        localStorage.setItem("localStorageCheck1", position.coords.latitude);
+        localStorage.setItem("localStorageCheck2", position.coords.longitude);
         
-        document.getElementsByName() = currentLatitude;
-        document.getElementsByName() = currentLongitude;
-        document.getElementsByName() = currentTimeStamp;
-      
-        // htmlElem.style.backgroundColor = '#' + currentColor;
-        // pElem.style.fontFamily = currentFont;
-        // imgElem.setAttribute('src', currentImage);
-      }
-    // localStorage.setItem("food", "apple");
-    let foodItem = localStorage.getItem("food");
-    console.log(foodItem);
-
-    let apple = {
-        type: "fruit",
-        name: "apple",
-        taste: "sweet"
-    };
-    localStorage.setItem("foodObject", JSON.stringify(apple));
-    let foodJSONStringObject = localStorage.getItem("foodObject");
-    let foodObject = JSON.parse(foodJSONStringObject);
-    console.log("my food object: ", foodObject.name);
-
-    $('#prizes').accordion();
-
-});
-
-
+        if("localStorageCheck" in localStorage) {
+            console.log("Item exists in LocalStorage");
+            // console.log(window.alert("Welcome Back!"));
+            $("#h1").html("Welcome");
+        } else {
+            console.log("Item doesn't exists in LocalStorage");
+            console.log(window.alert("Welcome!"));
+        }
+        localStorage.getItem("Lat1", position.coords.latitude);
+        localStorage.getItem("Lat2", position.coords.longitude);
+    });
+    
+    // function localStorageData(){
+    //     localStorage.setItem("lat1", "42.258817");
+    //    let item1 = localStorage.getItem("lat1");
+    //    console.log(item1);
+    
+    //     localStorage.setItem("lon1", "-83.0043917");
+    //     let item2 = localStorage.getItem("lon1");
+    //    console.log(item2);
+    
+    //     localStorage.setItem("lat2", "43.6532");
+    //     let item3 = localStorage.getItem("lat2");
+    //     console.log(item3);
+    
+    //     localStorage.setItem("lon2", "79.3832");
+    //     let item4 = localStorage.getItem("lon2");
+    //     console.log(item4);
+    
+    //     calcDistanceBetweenPoints();
+    //     console.log("New Latitude: ", Δφ);
+    //     console.log("New Longitute: ", Δλ);
+    // }
+   
     // DO NOT EDIT ANY CODE IN THIS FUNCTION DEFINTION
     // function to calculate the distance in metres between two lat/long pairs on Earth
     // Haversine formula - https://en.wikipedia.org/wiki/Haversine_formula
