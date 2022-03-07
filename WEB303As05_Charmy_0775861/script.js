@@ -38,6 +38,7 @@ $(document).ready(function () {
         set genre(value){
             this.genre = value;
         }
+
         updateContentItem(name, description, genre){
             if(name != null && description != null && genre != null) {
                 this.name = name;
@@ -72,8 +73,6 @@ $(document).ready(function () {
     novels.forEach(novels => {
         let addNovels = new ContentItem(novels[0], novels[1], novels[2], novels[3], novels[4], novels[5], novels[6], novels[7], novels[8], novels[9], novels[10]);
         $("#content-item-list").append(addNovels.toString());
-        $("#content-item-list").css({"border": "solid", "padding": "10px", "background-color": "light-coral", "color": "red", "width": "2px"}) 
+        $("#content-item-list").css({"border": "solid", "padding": "10px", "background-color": "light-coral", "color": "red", "width": "90%"}) 
     });
 });
-
-
